@@ -19,6 +19,8 @@
 		BF3478C016842AF50090FBCE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BF3478BE16842AF50090FBCE /* Credits.rtf */; };
 		BF3478C316842AF50090FBCE /* SKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3478C216842AF50090FBCE /* SKAppDelegate.m */; };
 		BF3478C616842AF50090FBCE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3478C416842AF50090FBCE /* MainMenu.xib */; };
+		BFE04964168C2FD300EA7F6E /* ScrapeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE04960168BAB2F00EA7F6E /* ScrapeKit.framework */; };
+		BFE04968168C34F000EA7F6E /* SKTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE04967168C34F000EA7F6E /* SKTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,6 @@
 		BF2F7188168BA27B006CD5E1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Other Sources/main.m"; sourceTree = "<group>"; };
 		BF2F7192168BA336006CD5E1 /* ScrapeKitTestCases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapeKitTestCases.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2F71AC168BA39D006CD5E1 /* ScrapeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ScrapeKit.xcodeproj; path = ../ScrapeKit/ScrapeKit.xcodeproj; sourceTree = "<group>"; };
-		BF2F71B1168BA683006CD5E1 /* SKTestCompilation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTestCompilation.h; path = Classes/SKTestCompilation.h; sourceTree = "<group>"; };
 		BF2F71B2168BA683006CD5E1 /* SKTestCompilation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestCompilation.m; path = Classes/SKTestCompilation.m; sourceTree = "<group>"; };
 		BF2F71BA168BA896006CD5E1 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = External/GHUnit.framework; sourceTree = "<group>"; };
 		BF3478AB16842AF50090FBCE /* ScrapeKitWorkbench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrapeKitWorkbench.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +73,8 @@
 		BF3478C116842AF50090FBCE /* SKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAppDelegate.h; sourceTree = "<group>"; };
 		BF3478C216842AF50090FBCE /* SKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAppDelegate.m; sourceTree = "<group>"; };
 		BF3478C516842AF50090FBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BFE04966168C34F000EA7F6E /* SKTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTestCase.h; path = Classes/SKTestCase.h; sourceTree = "<group>"; };
+		BFE04967168C34F000EA7F6E /* SKTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestCase.m; path = Classes/SKTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE04964168C2FD300EA7F6E /* ScrapeKit.framework in Frameworks */,
 				BF2F71BC168BA911006CD5E1 /* GHUnit.framework in Frameworks */,
 				BF2F7194168BA336006CD5E1 /* Cocoa.framework in Frameworks */,
 			);
@@ -126,7 +130,8 @@
 		BF2F71B9168BA811006CD5E1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BF2F71B1168BA683006CD5E1 /* SKTestCompilation.h */,
+				BFE04966168C34F000EA7F6E /* SKTestCase.h */,
+				BFE04967168C34F000EA7F6E /* SKTestCase.m */,
 				BF2F71B2168BA683006CD5E1 /* SKTestCompilation.m */,
 			);
 			name = Classes;
@@ -344,6 +349,7 @@
 			files = (
 				BF2F71AB168BA33D006CD5E1 /* main.m in Sources */,
 				BF2F71B3168BA683006CD5E1 /* SKTestCompilation.m in Sources */,
+				BFE04968168C34F000EA7F6E /* SKTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
