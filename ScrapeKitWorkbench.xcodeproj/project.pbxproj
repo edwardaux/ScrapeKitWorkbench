@@ -21,6 +21,7 @@
 		BF3478C616842AF50090FBCE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3478C416842AF50090FBCE /* MainMenu.xib */; };
 		BFE04964168C2FD300EA7F6E /* ScrapeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE04960168BAB2F00EA7F6E /* ScrapeKit.framework */; };
 		BFE04968168C34F000EA7F6E /* SKTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE04967168C34F000EA7F6E /* SKTestCase.m */; };
+		BFE0498B168DB8FE00EA7F6E /* SKTestTextBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE0498A168DB8FE00EA7F6E /* SKTestTextBuffer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		BF3478C516842AF50090FBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		BFE04966168C34F000EA7F6E /* SKTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTestCase.h; path = Classes/SKTestCase.h; sourceTree = "<group>"; };
 		BFE04967168C34F000EA7F6E /* SKTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestCase.m; path = Classes/SKTestCase.m; sourceTree = "<group>"; };
+		BFE0498A168DB8FE00EA7F6E /* SKTestTextBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestTextBuffer.m; path = Classes/SKTestTextBuffer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				BFE04966168C34F000EA7F6E /* SKTestCase.h */,
 				BFE04967168C34F000EA7F6E /* SKTestCase.m */,
 				BF2F71B2168BA683006CD5E1 /* SKTestCompilation.m */,
+				BFE0498A168DB8FE00EA7F6E /* SKTestTextBuffer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				BF2F71AB168BA33D006CD5E1 /* main.m in Sources */,
 				BF2F71B3168BA683006CD5E1 /* SKTestCompilation.m in Sources */,
 				BFE04968168C34F000EA7F6E /* SKTestCase.m in Sources */,
+				BFE0498B168DB8FE00EA7F6E /* SKTestTextBuffer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
