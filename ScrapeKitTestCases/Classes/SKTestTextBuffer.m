@@ -30,18 +30,35 @@
 	GHAssertEqualStrings([buffer stringValue], @"ll", nil);
 }
 
--(void)testBetween {
+-(void)testBetweenSimple {
 	SKTextBuffer *buffer;
 	
 	buffer = [[SKTextBuffer alloc] initWithString:@"<a><b>c</b></a>"];
 	GHAssertEqualStrings([[buffer betweenString1:@"<a>" include1:YES string2:@"</a>" include2:YES includeToEOF:NO] stringValue], @"<a><b>c</b></a>", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"", nil);
 	[buffer reset];
-	GHAssertEqualStrings([[buffer betweenString1:@"<a>" include1:NO string2:@"</a>"  include2:YES includeToEOF:NO] stringValue], @"<b>c</b></a>", nil);
+	GHAssertEqualStrings([[buffer betweenString1:@"<a>" include1:NO string2:@"</a>" include2:YES includeToEOF:NO] stringValue], @"<b>c</b></a>", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"", nil);
 	[buffer reset];
-	GHAssertEqualStrings([[buffer betweenString1:@"<a>" include1:YES string2:@"</a>" include2:NO  includeToEOF:NO] stringValue], @"<a><b>c</b>", nil);
+	GHAssertEqualStrings([[buffer betweenString1:@"<a>" include1:YES string2:@"</a>" include2:NO includeToEOF:NO] stringValue], @"<a><b>c</b>", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"</a>", nil);
 	[buffer reset];
-	GHAssertEqualStrings([[buffer betweenString1:@"<a>" include1:NO string2:@"</a>"  include2:NO  includeToEOF:NO] stringValue], @"<b>c</b>", nil);
+	GHAssertEqualStrings([[buffer betweenString1:@"<a>" include1:NO string2:@"</a>" include2:NO includeToEOF:NO] stringValue], @"<b>c</b>", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"</a>", nil);
+}
+
+-(void)testBetweenNotFound {
+	SKTextBuffer *buffer;
 	
+	buffer = [[SKTextBuffer alloc] initWithString:@"<a><b>c</b></a>"];
+	GHAssertEqualStrings([buffer betweenString1:@"<c>" include1:YES string2:@"</c>" include2:YES includeToEOF:NO], nil, nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"<a><b>c</b></a>", nil);
+	[buffer reset];
+	GHAssertEqualStrings([buffer betweenString1:@"<a>" include1:YES string2:@"</c>" include2:YES includeToEOF:NO], nil, nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"<a><b>c</b></a>", nil);
+	[buffer reset];
+	GHAssertEqualStrings([buffer betweenString1:@"<c>" include1:YES string2:@"</a>" include2:YES includeToEOF:NO], nil, nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"<a><b>c</b></a>", nil);
 }
 
 @end
