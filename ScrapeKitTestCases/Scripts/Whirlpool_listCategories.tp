@@ -1,0 +1,42 @@
+# returns an array of hashmaps with the following keys:
+#   categoryName
+#   remoteId
+#   title
+
+@main
+	PushBetween "<div id=""footer"">" exclude "<dl class=""wikilist"">" exclude :end
+	:loop
+		PushBetween "<dl class=""forumlist"">" exclude "</dl>" exclude :end
+		Invoke parseForumlist
+		Pop
+		Goto :loop
+	:end
+
+@parseForumlist
+	:loop
+		PushBetween "<dt>" include "<dt>" exclude includeToEOF
+		Invoke parseCategory
+		Pop
+		Goto :loop
+	:end
+
+@parseCategory
+	PushBetween "<dt>" exclude "</dt>" exclude :end
+	SaveVar categoryName
+	:loop
+		PushBetween "<dd>" exclude "</dd>" exclude :end
+		Invoke parseForum
+		Pop
+		AddHashMap
+		Goto :loop
+	:end
+
+@parseForum
+	PushVar categoryName
+	SaveHashVar categoryName
+	PushBetween "/forum/" exclude """" exclude :end
+	SaveHashVar remoteId
+	PushBetween ">" exclude "<" exclude :end
+	SaveHashVar title
+	:end
+

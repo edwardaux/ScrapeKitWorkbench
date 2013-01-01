@@ -1,0 +1,34 @@
+# returns an array of hashmaps with the following keys:
+#   type      (sticky, deleted, recent, " ")
+#   remoteId
+#   title
+#   replyCount
+#   firstUpdate
+#   lastUpdate
+
+@main
+	PushBetween "<tbody>" exclude "</tbody>" exclude :end
+	:loop
+		PushBetween "<tr" exclude "</tr>" exclude :end
+		Invoke parseThread
+		Pop
+		Goto :loop
+	:end
+
+@parseThread
+	PushBetween "class=""" exclude """" exclude :end
+	SaveHashVar type
+	PushBetween "/forum-replies.cfm?t=" exclude """" exclude :end
+	SaveHashVar remoteId
+	PushBetween ">" exclude "<" exclude :end
+	SaveHashVar title
+	PushBetween "class=""re" exclude """" exclude :end
+	Pop
+	PushBetween ">" exclude "<" exclude :end
+	SaveHashVar replyCount
+	PushBetween "<br>" exclude "</td>" exclude :end
+	SaveHashVar firstUpdate
+	PushBetween "<br>" exclude "</td>" exclude :end
+	SaveHashVar lastUpdate
+	AddHashMap
+	:end

@@ -1,0 +1,27 @@
+# returns an array of hashmaps with the following keys:
+#   categoryName
+#   remoteId
+#   title
+
+@main
+	PushBetween "// End Welcome Headers //" exclude "what's going on box" exclude includeToEOF
+	:loop
+		PushBetween "<table class=""tcat""" exclude "<table class=""tcat""" exclude includeToEOF
+		PushBetween "<strong>" exclude "</strong>" exclude :end
+		SaveVar categoryName
+		Invoke parseForumList
+		Pop
+		Goto :loop
+	:end
+
+@parseForumList
+	:loop
+		PushVar categoryName
+		SaveHashVar categoryName
+		PushBetween "http://androidforums.com/" exclude """" exclude :end
+		SaveHashVar remoteId
+		PushBetween ">" exclude "</a>" exclude :end
+		SaveHashVar title
+		AddHashMap
+		Goto :loop
+	:end

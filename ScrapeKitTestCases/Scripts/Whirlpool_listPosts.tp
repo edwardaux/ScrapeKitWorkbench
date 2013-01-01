@@ -1,0 +1,33 @@
+# returns an array of hashmaps with the following keys:
+#   remoteId
+#   authorId
+#   authorName
+#   bodyText
+#   postedDate
+#   editedDate (optional)
+
+@main
+	PushBetween "<tbody>" exclude "</tbody>" exclude :end
+	:loop
+		PushBetween "<tr" exclude "</tr>" exclude :end
+		Invoke parsePost
+		Pop
+		Goto :loop
+	:end
+
+@parsePost
+	PushBetween "id=""" exclude """" exclude :end
+	SaveHashVar remoteId
+	PushBetween "bu_name"">" exclude "<" exclude :end
+	SaveHashVar authorName
+	PushBetween "bodytext"">" exclude "</td>" exclude :end
+	SaveHashVar bodyText
+	PushBetween "&amp;ux=" exclude """" exclude :end
+	SaveHashVar authorId
+	PushBetween "posted</a>" exclude "<" exclude :end
+	SaveHashVar postedDate
+	PushBetween "edited " exclude "<" exclude :notEdited
+	SaveHashVar editedDate
+	:notEdited
+	AddHashMap
+	:end

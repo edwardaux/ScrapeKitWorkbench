@@ -1,0 +1,31 @@
+# returns an array of hashmaps with the following keys:
+#   categoryName
+#   remoteId
+#   title
+# Well, I thought this worked OK with the following URL, but AndroidForums
+# is really inconsistent with what they send back. Dog shit!
+# http://androidforums.com/index.php?pda=1
+
+@main
+	#consume the header bit
+	PushBetween "<td valign=""top""" exclude "<div class=""navbar"">" exclude :end
+	:loop
+		PushBetween "<div class=""titlebg"">" exclude "<div class=""titlebg"">" exclude includeToEOF
+		PushBetween ">" exclude "<" exclude :end
+		SaveVar categoryName
+		Invoke parseCategoryGroup
+		Pop
+		Goto :loop
+	:end
+
+@parseCategoryGroup
+	:loop
+		PushVar categoryName
+		SaveHashVar categoryName
+		PushBetween "http://androidforums.com/" exclude "/""" exclude :end
+		SaveHashVar remoteId
+		PushBetween ">" exclude "<" exclude :end
+		SaveHashVar title
+		AddHashMap
+		Goto :loop
+	:end
