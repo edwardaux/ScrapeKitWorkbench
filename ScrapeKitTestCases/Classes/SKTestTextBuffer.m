@@ -61,4 +61,21 @@
 	GHAssertEqualStrings([buffer remainingStringValue], @"<a><b>c</b></a>", nil);
 }
 
+-(void)testIncludeToEOF {
+	SKTextBuffer *buffer;
+	
+	buffer = [[SKTextBuffer alloc] initWithString:@",a,b,c,d,e"];
+	GHAssertEqualStrings([[buffer betweenString1:@"," include1:YES string2:@"," include2:NO includeToEOF:YES] stringValue], @",a", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @",b,c,d,e", nil);
+	GHAssertEqualStrings([[buffer betweenString1:@"," include1:YES string2:@"," include2:NO includeToEOF:YES] stringValue], @",b", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @",c,d,e", nil);
+	GHAssertEqualStrings([[buffer betweenString1:@"," include1:YES string2:@"," include2:NO includeToEOF:YES] stringValue], @",c", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @",d,e", nil);
+	GHAssertEqualStrings([[buffer betweenString1:@"," include1:YES string2:@"," include2:NO includeToEOF:YES] stringValue], @",d", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @",e", nil);
+	GHAssertEqualStrings([[buffer betweenString1:@"," include1:YES string2:@"," include2:NO includeToEOF:YES] stringValue], @",e", nil);
+	GHAssertEqualStrings([buffer remainingStringValue], @"", nil);
+	GHAssertEqualStrings([buffer betweenString1:@"," include1:YES string2:@"," include2:NO includeToEOF:YES], nil, nil);
+}
+
 @end
