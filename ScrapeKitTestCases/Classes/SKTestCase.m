@@ -8,6 +8,15 @@
 
 #import "SKTestCase.h"
 
+@implementation XXAddress
+@end
+
+@implementation XXPhoto
+@end
+
+@implementation XXHouse
+@end
+
 @implementation SKTestCase
 
 -(void)confirmValid:(NSString *)script {
