@@ -15,7 +15,7 @@
 @implementation SKTestCompilation
 
 -(void)testNoMain {
-	NSString *script = @""
+	NSString *script =
 	@"@blah\n"
 	@"	goto :end\n"
 	@"	:end";
@@ -24,7 +24,7 @@
 }
 
 -(void)testMissingFunction {
-	NSString *script = @""
+	NSString *script =
 	@"	goto :end\n"
 	@"	:end";
 	
@@ -32,14 +32,14 @@
 }
 
 -(void)testEmptyFunction1 {
-	NSString *script = @""
+	NSString *script =
 	@"@main\n";
 	
 	[self confirmValid:script];
 }
 
 -(void)testEmptyFunction2 {
-	NSString *script = @""
+	NSString *script =
 	@"@main\n"
 	@"@foo\n"
 	@"	goto :end\n"
@@ -49,14 +49,14 @@
 }
 
 -(void)testNoTrailingCR1 {
-	NSString *script = @""
+	NSString *script =
 	@"@main";
 	
 	[self confirmValid:script];
 }
 
 -(void)testNoTrailingCR2 {
-	NSString *script = @""
+	NSString *script =
 	@"@main\n"
 	@"	:end";
 	
@@ -64,14 +64,14 @@
 }
 
 -(void)testTrailingCR {
-	NSString *script = @""
+	NSString *script =
 	@"@main\n\n\n";
 	
 	[self confirmValid:script];
 }
 
 -(void)testWhitespace {
-	NSString *script = @""
+	NSString *script =
 	@"@main\n"
 	@":end1\n"
 	@"\n"

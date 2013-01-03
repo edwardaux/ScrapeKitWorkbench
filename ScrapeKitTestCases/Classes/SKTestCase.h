@@ -13,5 +13,6 @@
 
 -(void)confirmValid:(NSString *)script;
 -(void)confirmInvalid:(NSString *)script expectedError:(NSString *)expectedError;
+-(SKEngine *)runScript:(NSString *)script usingData:(NSString *)data;
 
 @end

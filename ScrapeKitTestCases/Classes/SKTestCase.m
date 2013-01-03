@@ -29,4 +29,17 @@
 	}
 }
 
+-(SKEngine *)runScript:(NSString *)script usingData:(NSString *)data {
+	SKEngine *engine = [[SKEngine alloc] init];
+	
+	[engine setDebugger:[[SKDebugger alloc] init]];
+	
+	NSError *error = NULL;
+	if (![engine compile:script error:&error])
+		GHFail([NSString stringWithFormat:@"Expected to compile, but got \"%@\"", [error localizedDescription]]);
+
+	[engine parse:data];
+	return engine;
+}
+
 @end

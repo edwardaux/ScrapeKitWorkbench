@@ -27,6 +27,7 @@
 		BFE0499416937F2A00EA7F6E /* Whirlpool_listCategories.tp in Resources */ = {isa = PBXBuildFile; fileRef = BFE0498F16937F2A00EA7F6E /* Whirlpool_listCategories.tp */; };
 		BFE0499516937F2A00EA7F6E /* Whirlpool_listPosts.tp in Resources */ = {isa = PBXBuildFile; fileRef = BFE0499016937F2A00EA7F6E /* Whirlpool_listPosts.tp */; };
 		BFE0499616937F2A00EA7F6E /* Whirlpool_listThreads.tp in Resources */ = {isa = PBXBuildFile; fileRef = BFE0499116937F2A00EA7F6E /* Whirlpool_listThreads.tp */; };
+		BFF05CC01694E4530086583F /* SKTestRules.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF05CBF1694E4530086583F /* SKTestRules.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		BFE0498F16937F2A00EA7F6E /* Whirlpool_listCategories.tp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Whirlpool_listCategories.tp; sourceTree = "<group>"; };
 		BFE0499016937F2A00EA7F6E /* Whirlpool_listPosts.tp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Whirlpool_listPosts.tp; sourceTree = "<group>"; };
 		BFE0499116937F2A00EA7F6E /* Whirlpool_listThreads.tp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Whirlpool_listThreads.tp; sourceTree = "<group>"; };
+		BFF05CBF1694E4530086583F /* SKTestRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestRules.m; path = Classes/SKTestRules.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				BFE04967168C34F000EA7F6E /* SKTestCase.m */,
 				BF2F71B2168BA683006CD5E1 /* SKTestCompilation.m */,
 				BFE0498A168DB8FE00EA7F6E /* SKTestTextBuffer.m */,
+				BFF05CBF1694E4530086583F /* SKTestRules.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				BF2F71B3168BA683006CD5E1 /* SKTestCompilation.m in Sources */,
 				BFE04968168C34F000EA7F6E /* SKTestCase.m in Sources */,
 				BFE0498B168DB8FE00EA7F6E /* SKTestTextBuffer.m in Sources */,
+				BFF05CC01694E4530086583F /* SKTestRules.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
