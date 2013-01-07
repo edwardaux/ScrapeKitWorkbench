@@ -296,6 +296,50 @@
 	GHAssertEqualStrings(text, @"OK", nil);
 }
 
+-(void)testFunction1 {
+	NSString *script =
+	@"@main\n"
+	@"  invoke func\n"
+	@"\n"
+	@"@func\n"
+	@"  setvar one a\n"
+	@"  setvar two b\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSString *a = [engine variableFor:@"a"];
+	NSString *b = [engine variableFor:@"b"];
+	GHAssertEqualStrings(a, @"one", nil);
+	GHAssertEqualStrings(b, @"two", nil);
+}
+
+
+-(void)testFunction2 {
+	NSString *script =
+	@"@main\n"
+	@"  invoke func1\n"
+	@"  invoke func2\n"
+	@"\n"
+	@"@func1\n"
+	@"  setvar one a\n"
+	@"  setvar two b\n"
+	@"\n"
+	@"@func2\n"
+	@"  setvar three a\n"
+	@"  setvar four b\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSString *a = [engine variableFor:@"a"];
+	NSString *b = [engine variableFor:@"b"];
+	GHAssertEqualStrings(a, @"three", nil);
+	GHAssertEqualStrings(b, @"four", nil);
+}
+
 
 
 @end
