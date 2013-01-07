@@ -28,6 +28,9 @@
 @property (nonatomic,strong) NSMutableArray *photos;
 @end
 
+@interface SKBreakpointRule : SKRule
+@end
+
 @interface SKTestCase : GHTestCase
 
 -(void)confirmValid:(NSString *)script;

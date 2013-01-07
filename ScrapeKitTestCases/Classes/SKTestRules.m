@@ -80,12 +80,35 @@
 	NSString *data = @"";
 	
 	SKEngine *engine = [self runScript:script usingData:data];
-	id array = [engine variableFor:@"array"];
-	GHAssertTrue([array isKindOfClass:[NSArray class]], nil);
-	GHAssertEquals([array count], (NSUInteger)0, nil);
+	id value = [engine variableFor:@"array"];
+	// note that NSArray is not supported (only NSMutableArray), therefore
+	// the engine will just replace the existing variable with the new one
+	GHAssertTrue([value isKindOfClass:[NSString class]], nil);
+	GHAssertEqualStrings(value, @"three", nil);
 }
 
--(void)testAssignVar {
+-(void)testMutableDictionary {
+	NSString *script =
+	@"@main\n"
+	@"  createvar NSMutableDictionary dict\n"
+	@"  setvar one dict a\n"
+	@"  setvar two dict b\n"
+	@"  setvar three dict c\n"
+	@"  setvar four dict\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	id dict = [engine variableFor:@"dict"];
+	GHAssertTrue([dict isKindOfClass:[NSMutableDictionary class]], nil);
+	GHAssertEquals([dict count], (NSUInteger)3, nil);
+	GHAssertEqualStrings(dict[@"a"], @"one", nil);
+	GHAssertEqualStrings(dict[@"b"], @"two", nil);
+	GHAssertEqualStrings(dict[@"c"], @"three", nil);
+}
+
+-(void)testObject {
 	NSString *script =
 	@"@main\n"
 	@"  createvar XXAddress addr\n"
@@ -103,6 +126,100 @@
 	GHAssertEqualStrings([addr suburb], @"Hollywood", nil);
 	GHAssertEqualStrings([addr state], @"CA", nil);
 	GHAssertEqualStrings([addr postcode], @"90210", nil);
+}
+
+-(void)testObjectComplex {
+	NSString *script =
+	@"@main\n"
+	@"  # Create the array to hold all the houses\n"
+	@"  createvar NSMutableArray houses\n"
+	@"	"
+	@"  # Create a new house\n"
+	@"  createvar XXHouse house\n"
+	@"  setvar 1 house bedrooms\n"
+	@"  setvar 2 house bathrooms\n"
+	@"	"
+	@"  # Create a new address\n"
+	@"  createvar XXAddress addr\n"
+	@"  setvar Sunset addr street\n"
+	@"  setvar Hollywood addr suburb\n"
+	@"  setvar CA addr state\n"
+	@"  setvar 90210 addr postcode\n"
+	@"  assignvar addr house address\n"
+	@"	"
+	@"  # Create a couple of photos\n"
+	@"  createvar NSMutableArray photos\n"
+	@"  assignvar photos house photos\n"
+	@"  createvar XXPhoto photo\n"
+	@"  setvar t1 photo title\n"
+	@"  setvar u1 photo url\n"
+	@"  assignvar photo house photos\n"
+	@"  createvar XXPhoto photo\n"
+	@"  setvar t2 photo title\n"
+	@"  setvar u2 photo url\n"
+	@"  assignvar photo house photos\n"
+	@"	"
+	@"  # And now add the house to the array\n"
+	@"  assignvar house houses\n"
+	@"	"
+	@"  # Create a second house\n"
+	@"  createvar XXHouse house\n"
+	@"  setvar 3 house bedrooms\n"
+	@"  setvar 4 house bathrooms\n"
+	@"	"
+	@"  # Create a new address\n"
+	@"  createvar XXAddress addr\n"
+	@"  setvar Railway addr street\n"
+	@"  setvar Dallas addr suburb\n"
+	@"  setvar TX addr state\n"
+	@"  setvar 12345 addr postcode\n"
+	@"  assignvar addr house address\n"
+	@"	"
+	@"  # Create a single photo\n"
+	@"  break\n"
+	@"  createvar NSMutableArray photos\n"
+	@"  assignvar photos house photos\n"
+	@"  createvar XXPhoto p1\n"
+	@"  setvar t3 p1 title\n"
+	@"  setvar u3 p1 url\n"
+	@"  assignvar p1 house photos\n"
+	@"	"
+	@"  # And now add the house to the array\n"
+	@"  assignvar house houses\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSArray *houses = [engine variableFor:@"houses"];
+	GHAssertEquals([houses count], (NSUInteger)2, nil);
+
+	GHAssertEquals([houses[0] bedrooms], (NSInteger)1, nil);
+	GHAssertEquals([houses[0] bathrooms], (NSInteger)2, nil);
+	XXAddress *address = [(XXHouse *)houses[0] address];
+	GHAssertEqualStrings([address street], @"Sunset", nil);
+	GHAssertEqualStrings([address suburb], @"Hollywood", nil);
+	GHAssertEqualStrings([address state], @"CA", nil);
+	GHAssertEqualStrings([address postcode], @"90210", nil);
+	NSArray *photos = [houses[0] photos];
+	GHAssertEquals([photos count], (NSUInteger)2, nil);
+	GHAssertEqualStrings([photos[0] title], @"t1", nil);
+	GHAssertEqualStrings([photos[0] url], @"u1", nil);
+	GHAssertEqualStrings([photos[1] title], @"t2", nil);
+	GHAssertEqualStrings([photos[1] url], @"u2", nil);
+	
+	GHAssertEquals([houses[1] bedrooms], (NSInteger)3, nil);
+	GHAssertEquals([houses[1] bathrooms], (NSInteger)4, nil);
+	address = [(XXHouse *)houses[1] address];
+	GHAssertEqualStrings([address street], @"Railway", nil);
+	GHAssertEqualStrings([address suburb], @"Dallas", nil);
+	GHAssertEqualStrings([address state], @"TX", nil);
+	GHAssertEqualStrings([address postcode], @"12345", nil);
+	photos = [houses[1] photos];
+	GHAssertEquals([photos count], (NSUInteger)1, nil);
+	GHAssertEqualStrings([photos[0] title], @"t3", nil);
+	GHAssertEqualStrings([photos[0] url], @"u3", nil);
+	
 }
 
 
