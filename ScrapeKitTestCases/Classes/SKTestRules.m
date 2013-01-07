@@ -176,7 +176,6 @@
 	@"  assignvar addr house address\n"
 	@"	"
 	@"  # Create a single photo\n"
-	@"  break\n"
 	@"  createvar NSMutableArray photos\n"
 	@"  assignvar photos house photos\n"
 	@"  createvar XXPhoto p1\n"
@@ -219,8 +218,84 @@
 	GHAssertEquals([photos count], (NSUInteger)1, nil);
 	GHAssertEqualStrings([photos[0] title], @"t3", nil);
 	GHAssertEqualStrings([photos[0] url], @"u3", nil);
-	
 }
+
+-(void)testIf1 {
+	NSString *script =
+	@"@main\n"
+	@"  createvar Blah wontwork\n"
+	@"  ifsuccess :success\n"
+  @"  setvar OK text\n"
+	@"  goto :end\n"
+	@":success\n"
+  @"  setvar WRONG text\n"
+	@":end\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSString *text = [engine variableFor:@"text"];
+	GHAssertEqualStrings(text, @"OK", nil);
+}
+
+-(void)testIf2 {
+	NSString *script =
+	@"@main\n"
+	@"  createvar Blah wontwork\n"
+	@"  iffailure :failure\n"
+  @"  setvar WRONG text\n"
+	@"  goto :end\n"
+	@":failure\n"
+  @"  setvar OK text\n"
+	@":end\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSString *text = [engine variableFor:@"text"];
+	GHAssertEqualStrings(text, @"OK", nil);
+}
+
+-(void)testIf3 {
+	NSString *script =
+	@"@main\n"
+	@"  createvar NSString willwork\n"
+	@"  ifsuccess :success\n"
+  @"  setvar WRONG text\n"
+	@"  goto :end\n"
+	@":success\n"
+  @"  setvar OK text\n"
+	@":end\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSString *text = [engine variableFor:@"text"];
+	GHAssertEqualStrings(text, @"OK", nil);
+}
+
+-(void)testIf4 {
+	NSString *script =
+	@"@main\n"
+	@"  createvar NSString willwork\n"
+	@"  iffailure :failure\n"
+  @"  setvar OK text\n"
+	@"  goto :end\n"
+	@":failure\n"
+  @"  setvar WRONG text\n"
+	@":end\n"
+	;
+	
+	NSString *data = @"";
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSString *text = [engine variableFor:@"text"];
+	GHAssertEqualStrings(text, @"OK", nil);
+}
+
 
 
 @end
