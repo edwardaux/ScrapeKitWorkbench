@@ -24,7 +24,6 @@
 	;
 	
 	NSString *data = @"";
-	[XXAddress alloc];
 	SKEngine *engine = [self runScript:script usingData:data];
 	GHAssertTrue([[engine variableFor:@"mydict"] isKindOfClass:[NSMutableDictionary class]], nil);
 	GHAssertTrue([[engine variableFor:@"myarray"] isKindOfClass:[NSMutableArray class]], nil);

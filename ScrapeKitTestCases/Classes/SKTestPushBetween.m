@@ -36,7 +36,6 @@
 	@":end\n"
 	;
 	
-	[XXAddress alloc];
 	SKEngine *engine = [self runScript:script usingData:data];
 	NSMutableArray *elements = [engine variableFor:@"elements"];
 	GHAssertEquals([elements count], (NSUInteger)3, nil);
@@ -45,36 +44,50 @@
 	GHAssertEqualStrings(elements[2], @"ghi", nil);
 }
 
-//-(void)testPushBetween2 {
-//	NSString *data =
-//	@"<table>\n"
-//	@"  <tr><td>col00</td><td>col01</td></tr>\n"
-//	@"  <tr><td>col10</td><td>col11</td></tr>\n"
-//	@"</table>\n"
-//	;
-//	
-//	NSString *script =
-//	@"@main\n"
-//	@"  pushbetween <tr> exclude </tr> exclude\n"
-//	@"  iffailure :end\n"
-//	@":loop\n"
-//	@"  pushbetween NSMutableDictionary mydict\n"
-//	@"  createvar NSMutableArray myarray\n"
-//	@"  createvar XXHouse myhouse\n"
-//  @"  createvar XXDoesntExist xxx\n"
-//	@":end\n"
-//	@"\n"
-//	@"@handlerow\n"
-//  @"  createvar XXDoesntExist xxx\n"
-//	;
-//	
-//	[XXAddress alloc];
-//	SKEngine *engine = [self runScript:script usingData:data];
-//	GHAssertTrue([[engine variableFor:@"mydict"] isKindOfClass:[NSMutableDictionary class]], nil);
-//	GHAssertTrue([[engine variableFor:@"myarray"] isKindOfClass:[NSMutableArray class]], nil);
-//	GHAssertTrue([[engine variableFor:@"myhouse"] isKindOfClass:[XXHouse class]], nil);
-//	GHAssertNil([engine variableFor:@"xxx"], nil);
-//}
-
+-(void)testPushBetween2 {
+	NSString *data =
+	@"<table>\n"
+	@"  <tr><td>00</td><td>01</td></tr>\n"
+	@"  <tr><td>10</td><td>11</td></tr>\n"
+	@"  <tr><td>20</td><td>21</td></tr>\n"
+	@"</table>\n"
+	;
+	
+	NSString *script =
+	@"@main\n"
+	@"  createvar NSMutableArray rows\n"
+	@"  pushbetween <tr> exclude </tr> exclude\n"
+	@"  iffailure :end\n"
+	@":loop\n"
+	@"  invoke handleRow\n"
+	@"  pop\n"
+	@"  pushbetween <tr> exclude </tr> exclude\n"
+	@"  iffailure :end\n"
+	@"  goto :loop\n"
+	@":end\n"
+	@"\n"
+	@"@handleRow\n"
+	@"  createvar NSMutableArray cells\n"
+	@"  pushbetween <td> exclude </td> exclude\n"
+	@"  iffailure :end\n"
+	@":loop\n"
+	@"  popIntoVar cells\n"
+	@"  pushbetween <td> exclude </td> exclude\n"
+	@"  iffailure :end\n"
+	@"  goto :loop\n"
+	@":end\n"
+	@"  assignvar cells rows\n"
+	;
+	
+	SKEngine *engine = [self runScript:script usingData:data];
+	NSMutableArray *elements = [engine variableFor:@"rows"];
+	GHAssertEquals([elements count], (NSUInteger)3, nil);
+	GHAssertEqualStrings(elements[0][0], @"00", nil);
+	GHAssertEqualStrings(elements[0][1], @"01", nil);
+	GHAssertEqualStrings(elements[1][0], @"10", nil);
+	GHAssertEqualStrings(elements[1][1], @"11", nil);
+	GHAssertEqualStrings(elements[2][0], @"20", nil);
+	GHAssertEqualStrings(elements[2][1], @"21", nil);
+}
 
 @end
