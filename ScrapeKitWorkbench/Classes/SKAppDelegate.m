@@ -7,12 +7,17 @@
 //
 
 #import "SKAppDelegate.h"
+#import "SKMainWindowController.h"
+
+@interface SKAppDelegate ()
+@property (nonatomic, strong) SKMainWindowController *mainWindowController;
+@end
 
 @implementation SKAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-	// Insert code here to initialize your application
+-(void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[self setMainWindowController:[[SKMainWindowController alloc] init]];
+	[[[self mainWindowController] window] makeKeyAndOrderFront:nil];
 }
 
 @end
