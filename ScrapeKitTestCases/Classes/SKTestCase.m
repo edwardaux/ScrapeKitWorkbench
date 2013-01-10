@@ -47,7 +47,7 @@
 -(SKEngine *)runScript:(NSString *)script usingData:(NSString *)data {
 	SKEngine *engine = [[SKEngine alloc] init];
 	[engine addRuleImplementationClass:[SKBreakpointRule class] forVerb:@"BREAK"];
-	[engine setDebugger:[[SKDebugger alloc] init]];
+	[engine setDebugger:[[SKConsoleDebugger alloc] init]];
 	
 	NSError *error = NULL;
 	if (![engine compile:script error:&error])
