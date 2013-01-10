@@ -24,6 +24,16 @@
 	return self;
 }
 
+-(void)awakeFromNib {
+	NSFont *font = [NSFont userFixedPitchFontOfSize:12];
+	[[self scriptTextView] setFont:font];
+	[[[self scriptTextView] textStorage] setFont:font];
+	[[self dataTextView] setFont:font];
+	[[[self dataTextView] textStorage] setFont:font];
+	[[self consoleTextView] setFont:font];
+	[[[self consoleTextView] textStorage] setFont:font];
+}
+
 -(IBAction)startScrape:(id)sender {
 	NSError *error = nil;
 	SKEngine *engine = [[SKEngine alloc] init];
