@@ -26,19 +26,21 @@
 
 -(void)awakeFromNib {
 	NSFont *font = [NSFont userFixedPitchFontOfSize:12];
+	
 	[[self scriptTextView] setFont:font];
-	[[[self scriptTextView] textStorage] setFont:font];
 	[[self dataTextView] setFont:font];
-	[[[self dataTextView] textStorage] setFont:font];
 	[[self consoleTextView] setFont:font];
-	[[[self consoleTextView] textStorage] setFont:font];
+
+	[[self scriptTextView] setString:@""];
+	[[self dataTextView] setString:@""];
+	[[self consoleTextView] setString:@""];
 	
 	NSString *script = [[NSUserDefaults standardUserDefaults] stringForKey:@"script"];
 	NSString *data = [[NSUserDefaults standardUserDefaults] stringForKey:@"data"];
 	if (script != nil)
-		[[[[self scriptTextView] textStorage] mutableString] appendString:script];
+		[[self scriptTextView] setString:script];
 	if (data != nil)
-		[[[[self dataTextView] textStorage] mutableString] appendString:data];
+		[[self dataTextView] setString:data];
 }
 
 -(IBAction)startScrape:(id)sender {

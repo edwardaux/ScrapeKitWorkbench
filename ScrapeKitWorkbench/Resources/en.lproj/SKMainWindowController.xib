@@ -75,7 +75,7 @@
 														<object class="NSTextField" id="180650970">
 															<reference key="NSNextResponder" ref="1020709163"/>
 															<int key="NSvFlags">268</int>
-															<string key="NSFrame">{{17, 254}, {102, 17}}</string>
+															<string key="NSFrame">{{17, 220}, {102, 17}}</string>
 															<reference key="NSSuperview" ref="1020709163"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="875746193"/>
@@ -143,7 +143,7 @@
 																				<string>WebURLsWithTitlesPboardType</string>
 																				<string>public.url</string>
 																			</set>
-																			<string key="NSFrameSize">{365, 224.5}</string>
+																			<string key="NSFrameSize">{365, 190.5}</string>
 																			<reference key="NSSuperview" ref="716417130"/>
 																			<reference key="NSWindow"/>
 																			<reference key="NSNextKeyView" ref="183352763"/>
@@ -167,7 +167,7 @@
 																				<int key="NSTCFlags">1</int>
 																			</object>
 																			<object class="NSTextViewSharedData" key="NSSharedData">
-																				<int key="NSFlags">12131</int>
+																				<int key="NSFlags">67112803</int>
 																				<int key="NSTextCheckingTypes">0</int>
 																				<nil key="NSMarkedAttributes"/>
 																				<object class="NSColor" key="NSBackgroundColor" id="322791327">
@@ -201,15 +201,21 @@
 																					<integer value="1" key="NSUnderline"/>
 																				</dictionary>
 																				<nil key="NSDefaultParagraphStyle"/>
-																				<nil key="NSTextFinder"/>
-																				<int key="NSPreferredTextFinderStyle">1</int>
+																				<object class="NSTextFinder" key="NSTextFinder">
+																					<reference key="NSTextFinderClient" ref="72788368"/>
+																					<reference key="NSFindBarContainer" ref="875746193"/>
+																					<int key="NSTextFinderStyle">2</int>
+																					<bool key="NSIncrementalSearchingEnabled">NO</bool>
+																					<bool key="NSIncrementalSearchingShouldDimContentView">YES</bool>
+																				</object>
+																				<int key="NSPreferredTextFinderStyle">2</int>
 																			</object>
 																			<int key="NSTVFlags">6</int>
 																			<string key="NSMaxSize">{463, 10000000}</string>
 																			<nil key="NSDelegate"/>
 																		</object>
 																	</array>
-																	<string key="NSFrame">{{1, 1}, {365, 224.5}}</string>
+																	<string key="NSFrame">{{1, 1}, {365, 190.5}}</string>
 																	<reference key="NSSuperview" ref="875746193"/>
 																	<reference key="NSWindow"/>
 																	<reference key="NSNextKeyView" ref="72788368"/>
@@ -374,7 +380,7 @@ wGw</bytes>
 																<object class="NSScroller" id="183352763">
 																	<reference key="NSNextResponder" ref="875746193"/>
 																	<int key="NSvFlags">256</int>
-																	<string key="NSFrame">{{366, 1}, {15, 224.5}}</string>
+																	<string key="NSFrame">{{366, 1}, {15, 190.5}}</string>
 																	<reference key="NSSuperview" ref="875746193"/>
 																	<reference key="NSWindow"/>
 																	<reference key="NSNextKeyView" ref="326075048"/>
@@ -401,7 +407,7 @@ wGw</bytes>
 																	<double key="NSPercent">0.94565218687057495</double>
 																</object>
 															</array>
-															<string key="NSFrame">{{20, 20}, {382, 226.5}}</string>
+															<string key="NSFrame">{{20, 20}, {382, 192.5}}</string>
 															<reference key="NSSuperview" ref="1020709163"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="339315690"/>
@@ -415,7 +421,7 @@ wGw</bytes>
 															<double key="NSMagnification">1</double>
 														</object>
 													</array>
-													<string key="NSFrameSize">{422, 291}</string>
+													<string key="NSFrameSize">{422, 257}</string>
 													<reference key="NSSuperview" ref="878987487"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="180650970"/>
@@ -429,7 +435,7 @@ wGw</bytes>
 														<object class="NSTextField" id="393952911">
 															<reference key="NSNextResponder" ref="326075048"/>
 															<int key="NSvFlags">268</int>
-															<string key="NSFrame">{{17, 254}, {71, 17}}</string>
+															<string key="NSFrame">{{17, 220}, {71, 17}}</string>
 															<reference key="NSSuperview" ref="326075048"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="56353033"/>
@@ -477,7 +483,7 @@ wGw</bytes>
 																				<string>WebURLsWithTitlesPboardType</string>
 																				<string>public.url</string>
 																			</set>
-																			<string key="NSFrameSize">{371, 224}</string>
+																			<string key="NSFrameSize">{371, 190}</string>
 																			<reference key="NSSuperview" ref="776118851"/>
 																			<reference key="NSWindow"/>
 																			<reference key="NSNextKeyView" ref="104953664"/>
@@ -501,7 +507,7 @@ wGw</bytes>
 																				<int key="NSTCFlags">1</int>
 																			</object>
 																			<object class="NSTextViewSharedData" key="NSSharedData">
-																				<int key="NSFlags">12131</int>
+																				<int key="NSFlags">67112803</int>
 																				<int key="NSTextCheckingTypes">0</int>
 																				<nil key="NSMarkedAttributes"/>
 																				<reference key="NSBackgroundColor" ref="322791327"/>
@@ -516,15 +522,21 @@ wGw</bytes>
 																					<integer value="1" key="NSUnderline"/>
 																				</dictionary>
 																				<nil key="NSDefaultParagraphStyle"/>
-																				<nil key="NSTextFinder"/>
-																				<int key="NSPreferredTextFinderStyle">1</int>
+																				<object class="NSTextFinder" key="NSTextFinder">
+																					<reference key="NSTextFinderClient" ref="937129823"/>
+																					<reference key="NSFindBarContainer" ref="56353033"/>
+																					<int key="NSTextFinderStyle">2</int>
+																					<bool key="NSIncrementalSearchingEnabled">NO</bool>
+																					<bool key="NSIncrementalSearchingShouldDimContentView">YES</bool>
+																				</object>
+																				<int key="NSPreferredTextFinderStyle">2</int>
 																			</object>
 																			<int key="NSTVFlags">6</int>
 																			<string key="NSMaxSize">{463, 10000000}</string>
 																			<nil key="NSDelegate"/>
 																		</object>
 																	</array>
-																	<string key="NSFrame">{{1, 1}, {371, 224}}</string>
+																	<string key="NSFrame">{{1, 1}, {371, 190}}</string>
 																	<reference key="NSSuperview" ref="56353033"/>
 																	<reference key="NSWindow"/>
 																	<reference key="NSNextKeyView" ref="937129823"/>
@@ -686,7 +698,7 @@ wGw</bytes>
 																<object class="NSScroller" id="104953664">
 																	<reference key="NSNextResponder" ref="56353033"/>
 																	<int key="NSvFlags">256</int>
-																	<string key="NSFrame">{{372, 1}, {15, 224}}</string>
+																	<string key="NSFrame">{{372, 1}, {15, 190}}</string>
 																	<reference key="NSSuperview" ref="56353033"/>
 																	<reference key="NSWindow"/>
 																	<reference key="NSNextKeyView" ref="405844955"/>
@@ -713,7 +725,7 @@ wGw</bytes>
 																	<double key="NSPercent">0.94565218687057495</double>
 																</object>
 															</array>
-															<string key="NSFrame">{{20, 20}, {388, 226}}</string>
+															<string key="NSFrame">{{20, 20}, {388, 192}}</string>
 															<reference key="NSSuperview" ref="326075048"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="999343641"/>
@@ -727,7 +739,7 @@ wGw</bytes>
 															<double key="NSMagnification">1</double>
 														</object>
 													</array>
-													<string key="NSFrame">{{423, 0}, {428, 291}}</string>
+													<string key="NSFrame">{{423, 0}, {428, 257}}</string>
 													<reference key="NSSuperview" ref="878987487"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="393952911"/>
@@ -735,7 +747,7 @@ wGw</bytes>
 													<string key="NSClassName">NSView</string>
 												</object>
 											</array>
-											<string key="NSFrame">{{0, -7}, {851, 291}}</string>
+											<string key="NSFrame">{{0, -7}, {851, 257}}</string>
 											<reference key="NSSuperview" ref="852443482"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="1020709163"/>
@@ -744,7 +756,7 @@ wGw</bytes>
 											<int key="NSDividerStyle">2</int>
 										</object>
 									</array>
-									<string key="NSFrameSize">{851, 284}</string>
+									<string key="NSFrameSize">{851, 250}</string>
 									<reference key="NSSuperview" ref="328065270"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="878987487"/>
@@ -758,7 +770,7 @@ wGw</bytes>
 										<object class="NSButton" id="211090617">
 											<reference key="NSNextResponder" ref="405844955"/>
 											<int key="NSvFlags">265</int>
-											<string key="NSFrame">{{755, 287}, {82, 32}}</string>
+											<string key="NSFrame">{{755, 321}, {82, 32}}</string>
 											<reference key="NSSuperview" ref="405844955"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView"/>
@@ -783,7 +795,7 @@ wGw</bytes>
 										<object class="NSTabView" id="456348064">
 											<reference key="NSNextResponder" ref="405844955"/>
 											<int key="NSvFlags">18</int>
-											<string key="NSFrame">{{13, 10}, {747, 321}}</string>
+											<string key="NSFrame">{{13, 10}, {747, 355}}</string>
 											<reference key="NSSuperview" ref="405844955"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="91732237"/>
@@ -825,7 +837,7 @@ wGw</bytes>
 																					<string>WebURLsWithTitlesPboardType</string>
 																					<string>public.url</string>
 																				</set>
-																				<string key="NSFrameSize">{676, 263}</string>
+																				<string key="NSFrameSize">{676, 282}</string>
 																				<reference key="NSSuperview" ref="53216129"/>
 																				<reference key="NSWindow"/>
 																				<reference key="NSNextKeyView" ref="808148368"/>
@@ -849,7 +861,7 @@ wGw</bytes>
 																					<int key="NSTCFlags">1</int>
 																				</object>
 																				<object class="NSTextViewSharedData" key="NSSharedData">
-																					<int key="NSFlags">12131</int>
+																					<int key="NSFlags">67112803</int>
 																					<int key="NSTextCheckingTypes">0</int>
 																					<nil key="NSMarkedAttributes"/>
 																					<reference key="NSBackgroundColor" ref="322791327"/>
@@ -864,15 +876,21 @@ wGw</bytes>
 																						<integer value="1" key="NSUnderline"/>
 																					</dictionary>
 																					<nil key="NSDefaultParagraphStyle"/>
-																					<nil key="NSTextFinder"/>
-																					<int key="NSPreferredTextFinderStyle">1</int>
+																					<object class="NSTextFinder" key="NSTextFinder">
+																						<reference key="NSTextFinderClient" ref="548738941"/>
+																						<reference key="NSFindBarContainer" ref="13092987"/>
+																						<int key="NSTextFinderStyle">2</int>
+																						<bool key="NSIncrementalSearchingEnabled">NO</bool>
+																						<bool key="NSIncrementalSearchingShouldDimContentView">YES</bool>
+																					</object>
+																					<int key="NSPreferredTextFinderStyle">2</int>
 																				</object>
-																				<int key="NSTVFlags">6</int>
-																				<string key="NSMaxSize">{696, 10000000}</string>
+																				<int key="NSTVFlags">7</int>
+																				<string key="NSMaxSize">{10000000, 10000000}</string>
 																				<nil key="NSDelegate"/>
 																			</object>
 																		</array>
-																		<string key="NSFrame">{{1, 1}, {676, 263}}</string>
+																		<string key="NSFrame">{{1, 1}, {676, 282}}</string>
 																		<reference key="NSSuperview" ref="13092987"/>
 																		<reference key="NSWindow"/>
 																		<reference key="NSNextKeyView" ref="548738941"/>
@@ -1034,10 +1052,10 @@ wGw</bytes>
 																	<object class="NSScroller" id="808148368">
 																		<reference key="NSNextResponder" ref="13092987"/>
 																		<int key="NSvFlags">256</int>
-																		<string key="NSFrame">{{677, 1}, {15, 263}}</string>
+																		<string key="NSFrame">{{677, 1}, {15, 282}}</string>
 																		<reference key="NSSuperview" ref="13092987"/>
 																		<reference key="NSWindow"/>
-																		<reference key="NSNextKeyView" ref="211090617"/>
+																		<reference key="NSNextKeyView" ref="456348064"/>
 																		<string key="NSReuseIdentifierKey">_NS:83</string>
 																		<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																		<reference key="NSTarget" ref="13092987"/>
@@ -1047,8 +1065,8 @@ wGw</bytes>
 																	</object>
 																	<object class="NSScroller" id="880935736">
 																		<reference key="NSNextResponder" ref="13092987"/>
-																		<int key="NSvFlags">-2147483392</int>
-																		<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
+																		<int key="NSvFlags">256</int>
+																		<string key="NSFrame">{{1, 283}, {676, 15}}</string>
 																		<reference key="NSSuperview" ref="13092987"/>
 																		<reference key="NSWindow"/>
 																		<reference key="NSNextKeyView" ref="53216129"/>
@@ -1061,12 +1079,12 @@ wGw</bytes>
 																		<double key="NSPercent">0.94565218687057495</double>
 																	</object>
 																</array>
-																<string key="NSFrame">{{17, 7}, {693, 265}}</string>
+																<string key="NSFrame">{{17, 7}, {693, 299}}</string>
 																<reference key="NSSuperview" ref="91732237"/>
 																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="880935736"/>
 																<string key="NSReuseIdentifierKey">_NS:9</string>
-																<int key="NSsFlags">133138</int>
+																<int key="NSsFlags">133170</int>
 																<reference key="NSVScroller" ref="808148368"/>
 																<reference key="NSHScroller" ref="880935736"/>
 																<reference key="NSContentView" ref="53216129"/>
@@ -1075,7 +1093,7 @@ wGw</bytes>
 																<double key="NSMagnification">1</double>
 															</object>
 														</array>
-														<string key="NSFrame">{{10, 33}, {727, 275}}</string>
+														<string key="NSFrame">{{10, 33}, {727, 309}}</string>
 														<reference key="NSSuperview" ref="456348064"/>
 														<reference key="NSWindow"/>
 														<reference key="NSNextKeyView" ref="13092987"/>
@@ -1108,7 +1126,7 @@ wGw</bytes>
 											</array>
 										</object>
 									</array>
-									<string key="NSFrame">{{0, 285}, {851, 345}}</string>
+									<string key="NSFrame">{{0, 251}, {851, 379}}</string>
 									<reference key="NSSuperview" ref="328065270"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="456348064"/>

@@ -11,7 +11,9 @@
 @implementation SKWorkbenchDebugger
 
 -(void)emitMessage:(NSString *)message {
-	[[[[self consoleTextView] textStorage] mutableString] appendString:[NSString stringWithFormat:@"%@\n", message]];
+	NSString *current = [[self consoleTextView] string];
+	NSString *appended = [current stringByAppendingFormat:@"%@\n", message];
+	[[self consoleTextView] setString:appended];
 }
 
 @end
