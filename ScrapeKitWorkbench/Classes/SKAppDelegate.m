@@ -20,4 +20,12 @@
 	[[[self mainWindowController] window] makeKeyAndOrderFront:nil];
 }
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+	NSString *script = [[[self mainWindowController] scriptTextView] string];
+	NSString *data = [[[self mainWindowController] dataTextView] string];
+	[[NSUserDefaults standardUserDefaults] setValue:script forKey:@"script"];
+	[[NSUserDefaults standardUserDefaults] setValue:data forKey:@"data"];
+	return NSTerminateNow;
+}
+
 @end
