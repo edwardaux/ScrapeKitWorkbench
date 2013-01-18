@@ -23,6 +23,7 @@
 		BF8E0686169E9C63009AF2E1 /* SKMainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8E0684169E9C63009AF2E1 /* SKMainWindowController.xib */; };
 		BFCCAE29169F5B5300416D8B /* SKWorkbenchDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCCAE28169F5B5300416D8B /* SKWorkbenchDebugger.m */; };
 		BFCCAE2A169F5B8600416D8B /* ScrapeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE04960168BAB2F00EA7F6E /* ScrapeKit.framework */; };
+		BFCCAE7816A5F7E800416D8B /* SKTestParseStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCCAE7716A5F7E800416D8B /* SKTestParseStrings.m */; };
 		BFD015EB169B7A0F00DCF61D /* SKTestPushBetween.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD015EA169B7A0F00DCF61D /* SKTestPushBetween.m */; };
 		BFE04964168C2FD300EA7F6E /* ScrapeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE04960168BAB2F00EA7F6E /* ScrapeKit.framework */; };
 		BFE04968168C34F000EA7F6E /* SKTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE04967168C34F000EA7F6E /* SKTestCase.m */; };
@@ -90,6 +91,7 @@
 		BF8E0684169E9C63009AF2E1 /* SKMainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SKMainWindowController.xib; path = en.lproj/SKMainWindowController.xib; sourceTree = "<group>"; };
 		BFCCAE27169F5B5300416D8B /* SKWorkbenchDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKWorkbenchDebugger.h; sourceTree = "<group>"; };
 		BFCCAE28169F5B5300416D8B /* SKWorkbenchDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKWorkbenchDebugger.m; sourceTree = "<group>"; };
+		BFCCAE7716A5F7E800416D8B /* SKTestParseStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestParseStrings.m; path = Classes/SKTestParseStrings.m; sourceTree = "<group>"; };
 		BFD015EA169B7A0F00DCF61D /* SKTestPushBetween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestPushBetween.m; path = Classes/SKTestPushBetween.m; sourceTree = "<group>"; };
 		BFE04966168C34F000EA7F6E /* SKTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTestCase.h; path = Classes/SKTestCase.h; sourceTree = "<group>"; };
 		BFE04967168C34F000EA7F6E /* SKTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTestCase.m; path = Classes/SKTestCase.m; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				BFE0498A168DB8FE00EA7F6E /* SKTestTextBuffer.m */,
 				BFF05CBF1694E4530086583F /* SKTestRules.m */,
 				BFD015EA169B7A0F00DCF61D /* SKTestPushBetween.m */,
+				BFCCAE7716A5F7E800416D8B /* SKTestParseStrings.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				BFE0498B168DB8FE00EA7F6E /* SKTestTextBuffer.m in Sources */,
 				BFF05CC01694E4530086583F /* SKTestRules.m in Sources */,
 				BFD015EB169B7A0F00DCF61D /* SKTestPushBetween.m in Sources */,
+				BFCCAE7816A5F7E800416D8B /* SKTestParseStrings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
