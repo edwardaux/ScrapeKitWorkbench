@@ -31,12 +31,12 @@
 	GHAssertNil([engine variableFor:@"xxx"], nil);
 }
 
--(void)testSetVar {
+-(void)testAssignConst {
 	NSString *script =
 	@"@main\n"
-	@"  setvar xxx myvar1\n"
-	@"  setvar yyy myvar2\n"
-	@"  setvar yyy2 myvar2\n"
+	@"  assignconst xxx myvar1\n"
+	@"  assignconst yyy myvar2\n"
+	@"  assignconst yyy2 myvar2\n"
 	;
 	
 	NSString *data = @"";
@@ -51,9 +51,9 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar NSMutableArray array\n"
-	@"  setvar one array\n"
-	@"  setvar two array\n"
-	@"  setvar three array\n"
+	@"  assignconst one array\n"
+	@"  assignconst two array\n"
+	@"  assignconst three array\n"
 	;
 	
 	NSString *data = @"";
@@ -71,9 +71,9 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar NSArray array\n"
-	@"  setvar one array\n"
-	@"  setvar two array\n"
-	@"  setvar three array\n"
+	@"  assignconst one array\n"
+	@"  assignconst two array\n"
+	@"  assignconst three array\n"
 	;
 	
 	NSString *data = @"";
@@ -90,10 +90,10 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar NSMutableDictionary dict\n"
-	@"  setvar one dict a\n"
-	@"  setvar two dict b\n"
-	@"  setvar three dict c\n"
-	@"  setvar four dict\n"
+	@"  assignconst one dict a\n"
+	@"  assignconst two dict b\n"
+	@"  assignconst three dict c\n"
+	@"  assignconst four dict\n"
 	;
 	
 	NSString *data = @"";
@@ -111,10 +111,10 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar XXAddress addr\n"
-	@"  setvar Sunset addr street\n"
-	@"  setvar Hollywood addr suburb\n"
-	@"  setvar CA addr state\n"
-	@"  setvar 90210 addr postcode\n"
+	@"  assignconst Sunset addr street\n"
+	@"  assignconst Hollywood addr suburb\n"
+	@"  assignconst CA addr state\n"
+	@"  assignconst 90210 addr postcode\n"
 	;
 	
 	NSString *data = @"";
@@ -135,27 +135,27 @@
 	@"	"
 	@"  # Create a new house\n"
 	@"  createvar XXHouse house\n"
-	@"  setvar 1 house bedrooms\n"
-	@"  setvar 2 house bathrooms\n"
+	@"  assignconst 1 house bedrooms\n"
+	@"  assignconst 2 house bathrooms\n"
 	@"	"
 	@"  # Create a new address\n"
 	@"  createvar XXAddress addr\n"
-	@"  setvar Sunset addr street\n"
-	@"  setvar Hollywood addr suburb\n"
-	@"  setvar CA addr state\n"
-	@"  setvar 90210 addr postcode\n"
+	@"  assignconst Sunset addr street\n"
+	@"  assignconst Hollywood addr suburb\n"
+	@"  assignconst CA addr state\n"
+	@"  assignconst 90210 addr postcode\n"
 	@"  assignvar addr house address\n"
 	@"	"
 	@"  # Create a couple of photos\n"
 	@"  createvar NSMutableArray photos\n"
 	@"  assignvar photos house photos\n"
 	@"  createvar XXPhoto photo\n"
-	@"  setvar t1 photo title\n"
-	@"  setvar u1 photo url\n"
+	@"  assignconst t1 photo title\n"
+	@"  assignconst u1 photo url\n"
 	@"  assignvar photo house photos\n"
 	@"  createvar XXPhoto photo\n"
-	@"  setvar t2 photo title\n"
-	@"  setvar u2 photo url\n"
+	@"  assignconst t2 photo title\n"
+	@"  assignconst u2 photo url\n"
 	@"  assignvar photo house photos\n"
 	@"	"
 	@"  # And now add the house to the array\n"
@@ -163,23 +163,23 @@
 	@"	"
 	@"  # Create a second house\n"
 	@"  createvar XXHouse house\n"
-	@"  setvar 3 house bedrooms\n"
-	@"  setvar 4 house bathrooms\n"
+	@"  assignconst 3 house bedrooms\n"
+	@"  assignconst 4 house bathrooms\n"
 	@"	"
 	@"  # Create a new address\n"
 	@"  createvar XXAddress addr\n"
-	@"  setvar Railway addr street\n"
-	@"  setvar Dallas addr suburb\n"
-	@"  setvar TX addr state\n"
-	@"  setvar 12345 addr postcode\n"
+	@"  assignconst Railway addr street\n"
+	@"  assignconst Dallas addr suburb\n"
+	@"  assignconst TX addr state\n"
+	@"  assignconst 12345 addr postcode\n"
 	@"  assignvar addr house address\n"
 	@"	"
 	@"  # Create a single photo\n"
 	@"  createvar NSMutableArray photos\n"
 	@"  assignvar photos house photos\n"
 	@"  createvar XXPhoto p1\n"
-	@"  setvar t3 p1 title\n"
-	@"  setvar u3 p1 url\n"
+	@"  assignconst t3 p1 title\n"
+	@"  assignconst u3 p1 url\n"
 	@"  assignvar p1 house photos\n"
 	@"	"
 	@"  # And now add the house to the array\n"
@@ -223,11 +223,11 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar Blah wontwork\n"
-	@"  ifsuccess :success\n"
-  @"  setvar OK text\n"
-	@"  goto :end\n"
+	@"  ifsuccess success\n"
+  @"  assignconst OK text\n"
+	@"  goto end\n"
 	@":success\n"
-  @"  setvar WRONG text\n"
+  @"  assignconst WRONG text\n"
 	@":end\n"
 	;
 	
@@ -242,11 +242,11 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar Blah wontwork\n"
-	@"  iffailure :failure\n"
-  @"  setvar WRONG text\n"
-	@"  goto :end\n"
+	@"  iffailure failure\n"
+  @"  assignconst WRONG text\n"
+	@"  goto end\n"
 	@":failure\n"
-  @"  setvar OK text\n"
+  @"  assignconst OK text\n"
 	@":end\n"
 	;
 	
@@ -261,11 +261,11 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar NSString willwork\n"
-	@"  ifsuccess :success\n"
-  @"  setvar WRONG text\n"
-	@"  goto :end\n"
+	@"  ifsuccess success\n"
+  @"  assignconst WRONG text\n"
+	@"  goto end\n"
 	@":success\n"
-  @"  setvar OK text\n"
+  @"  assignconst OK text\n"
 	@":end\n"
 	;
 	
@@ -280,11 +280,11 @@
 	NSString *script =
 	@"@main\n"
 	@"  createvar NSString willwork\n"
-	@"  iffailure :failure\n"
-  @"  setvar OK text\n"
-	@"  goto :end\n"
+	@"  iffailure failure\n"
+  @"  assignconst OK text\n"
+	@"  goto end\n"
 	@":failure\n"
-  @"  setvar WRONG text\n"
+  @"  assignconst WRONG text\n"
 	@":end\n"
 	;
 	
@@ -301,8 +301,8 @@
 	@"  invoke func\n"
 	@"\n"
 	@"@func\n"
-	@"  setvar one a\n"
-	@"  setvar two b\n"
+	@"  assignconst one a\n"
+	@"  assignconst two b\n"
 	;
 	
 	NSString *data = @"";
@@ -322,12 +322,12 @@
 	@"  invoke func2\n"
 	@"\n"
 	@"@func1\n"
-	@"  setvar one a\n"
-	@"  setvar two b\n"
+	@"  assignconst one a\n"
+	@"  assignconst two b\n"
 	@"\n"
 	@"@func2\n"
-	@"  setvar three a\n"
-	@"  setvar four b\n"
+	@"  assignconst three a\n"
+	@"  assignconst four b\n"
 	;
 	
 	NSString *data = @"";

@@ -17,7 +17,7 @@
 -(void)testNoMain {
 	NSString *script =
 	@"@blah\n"
-	@"	goto :end\n"
+	@"	goto end\n"
 	@"	:end";
 	
 	[self confirmInvalid:script expectedError:@"No main function"];
@@ -25,10 +25,10 @@
 
 -(void)testMissingFunction {
 	NSString *script =
-	@"	goto :end\n"
+	@"	goto end\n"
 	@"	:end";
 	
-	[self confirmInvalid:script expectedError:@"Rule \"goto :end\" declared outside of a function"];
+	[self confirmInvalid:script expectedError:@"Rule \"goto end\" declared outside of a function"];
 }
 
 -(void)testEmptyFunction1 {
@@ -42,7 +42,7 @@
 	NSString *script =
 	@"@main\n"
 	@"@foo\n"
-	@"	goto :end\n"
+	@"	goto end\n"
 	@"	:end";
 	
 	[self confirmValid:script];
