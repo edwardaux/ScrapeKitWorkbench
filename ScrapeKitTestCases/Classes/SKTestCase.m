@@ -17,12 +17,6 @@
 @implementation XXHouse
 @end
 
-@implementation SKBreakpointRule
--(BOOL)executeInFrame:(SKFrame *)frame function:(SKFunction *)function engine:(SKEngine *)engine {
-	return YES;
-}
-@end
-
 @implementation SKTestCase
 
 -(void)confirmValid:(NSString *)script {
@@ -46,7 +40,6 @@
 
 -(SKEngine *)runScript:(NSString *)script usingData:(NSString *)data {
 	SKEngine *engine = [[SKEngine alloc] init];
-	[engine addRuleImplementationClass:[SKBreakpointRule class] forVerb:@"BREAK"];
 	[engine setDebugger:[[SKConsoleDebugger alloc] init]];
 	
 	NSError *error = NULL;
