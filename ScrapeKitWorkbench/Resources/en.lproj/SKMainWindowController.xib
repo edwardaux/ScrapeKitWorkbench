@@ -201,13 +201,7 @@
 																					<integer value="1" key="NSUnderline"/>
 																				</dictionary>
 																				<nil key="NSDefaultParagraphStyle"/>
-																				<object class="NSTextFinder" key="NSTextFinder">
-																					<reference key="NSTextFinderClient" ref="72788368"/>
-																					<reference key="NSFindBarContainer" ref="875746193"/>
-																					<int key="NSTextFinderStyle">2</int>
-																					<bool key="NSIncrementalSearchingEnabled">NO</bool>
-																					<bool key="NSIncrementalSearchingShouldDimContentView">YES</bool>
-																				</object>
+																				<nil key="NSTextFinder"/>
 																				<int key="NSPreferredTextFinderStyle">2</int>
 																			</object>
 																			<int key="NSTVFlags">6</int>
@@ -522,13 +516,7 @@ wGw</bytes>
 																					<integer value="1" key="NSUnderline"/>
 																				</dictionary>
 																				<nil key="NSDefaultParagraphStyle"/>
-																				<object class="NSTextFinder" key="NSTextFinder">
-																					<reference key="NSTextFinderClient" ref="937129823"/>
-																					<reference key="NSFindBarContainer" ref="56353033"/>
-																					<int key="NSTextFinderStyle">2</int>
-																					<bool key="NSIncrementalSearchingEnabled">NO</bool>
-																					<bool key="NSIncrementalSearchingShouldDimContentView">YES</bool>
-																				</object>
+																				<nil key="NSTextFinder"/>
 																				<int key="NSPreferredTextFinderStyle">2</int>
 																			</object>
 																			<int key="NSTVFlags">6</int>
@@ -876,13 +864,7 @@ wGw</bytes>
 																						<integer value="1" key="NSUnderline"/>
 																					</dictionary>
 																					<nil key="NSDefaultParagraphStyle"/>
-																					<object class="NSTextFinder" key="NSTextFinder">
-																						<reference key="NSTextFinderClient" ref="548738941"/>
-																						<reference key="NSFindBarContainer" ref="13092987"/>
-																						<int key="NSTextFinderStyle">2</int>
-																						<bool key="NSIncrementalSearchingEnabled">NO</bool>
-																						<bool key="NSIncrementalSearchingShouldDimContentView">YES</bool>
-																					</object>
+																					<nil key="NSTextFinder"/>
 																					<int key="NSPreferredTextFinderStyle">2</int>
 																				</object>
 																				<int key="NSTVFlags">7</int>
@@ -1055,7 +1037,7 @@ wGw</bytes>
 																		<string key="NSFrame">{{677, 1}, {15, 282}}</string>
 																		<reference key="NSSuperview" ref="13092987"/>
 																		<reference key="NSWindow"/>
-																		<reference key="NSNextKeyView" ref="456348064"/>
+																		<reference key="NSNextKeyView" ref="880935736"/>
 																		<string key="NSReuseIdentifierKey">_NS:83</string>
 																		<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																		<reference key="NSTarget" ref="13092987"/>
@@ -1069,7 +1051,7 @@ wGw</bytes>
 																		<string key="NSFrame">{{1, 283}, {676, 15}}</string>
 																		<reference key="NSSuperview" ref="13092987"/>
 																		<reference key="NSWindow"/>
-																		<reference key="NSNextKeyView" ref="53216129"/>
+																		<reference key="NSNextKeyView" ref="211090617"/>
 																		<string key="NSReuseIdentifierKey">_NS:33</string>
 																		<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 																		<int key="NSsFlags">1</int>
@@ -1082,7 +1064,7 @@ wGw</bytes>
 																<string key="NSFrame">{{17, 7}, {693, 299}}</string>
 																<reference key="NSSuperview" ref="91732237"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView" ref="880935736"/>
+																<reference key="NSNextKeyView" ref="53216129"/>
 																<string key="NSReuseIdentifierKey">_NS:9</string>
 																<int key="NSsFlags">133170</int>
 																<reference key="NSVScroller" ref="808148368"/>
@@ -1100,18 +1082,6 @@ wGw</bytes>
 														<string key="NSReuseIdentifierKey">_NS:11</string>
 													</object>
 													<string key="NSLabel">Console</string>
-													<reference key="NSColor" ref="262749761"/>
-													<reference key="NSTabView" ref="456348064"/>
-												</object>
-												<object class="NSTabViewItem" id="687196174">
-													<string key="NSIdentifier">2</string>
-													<object class="NSView" key="NSView" id="946308981">
-														<nil key="NSNextResponder"/>
-														<int key="NSvFlags">256</int>
-														<string key="NSFrame">{{10, 33}, {727, 275}}</string>
-														<string key="NSReuseIdentifierKey">_NS:28</string>
-													</object>
-													<string key="NSLabel">Variables</string>
 													<reference key="NSColor" ref="262749761"/>
 													<reference key="NSTabView" ref="456348064"/>
 												</object>
@@ -1387,7 +1357,6 @@ wGw</bytes>
 						<reference key="object" ref="456348064"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="1026510864"/>
-							<reference ref="687196174"/>
 						</array>
 						<reference key="parent" ref="405844955"/>
 					</object>
@@ -1398,19 +1367,6 @@ wGw</bytes>
 							<reference ref="91732237"/>
 						</array>
 						<reference key="parent" ref="456348064"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">27</int>
-						<reference key="object" ref="687196174"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="946308981"/>
-						</array>
-						<reference key="parent" ref="456348064"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28</int>
-						<reference key="object" ref="946308981"/>
-						<reference key="parent" ref="687196174"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">29</int>
@@ -1484,8 +1440,6 @@ wGw</bytes>
 				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="27.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
