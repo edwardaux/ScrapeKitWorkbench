@@ -6,7 +6,7 @@ The ScrapeKit Workbench is does two things:
 
 ### Installation ###
 * Clone this project into a directory on your local machine
-* Open a Terminal prompt, navigate to the root directory of this project, and type the following command `git update xxx`
+* Open a Terminal prompt, navigate to the `ScrapeKitWorkbench/External/ScrapeKit` directory of this project, and type the following command `git submodule update --init --recursive`
 * Open the project in Xcode, build and run.
 
 This should display a window with two text views at the top.  Enter your script into left hand one, paste some sample data into the right hand one, and click on *Scrape*.

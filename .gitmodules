@@ -1,0 +1,3 @@
+[submodule "External/ScrapeKit"]
+	path = External/ScrapeKit
+	url = git://github.com/edwardaux/ScrapeKit.git
