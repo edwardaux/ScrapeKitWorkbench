@@ -155,6 +155,7 @@
 				BFD34DE716DAB6B600D0DFA6 /* LICENSE.txt */,
 				BFD34DE916DAB6D600D0DFA6 /* readme.md */,
 				BF3478B516842AF50090FBCE /* ScrapeKitWorkbench */,
+				BF8B705916E4AD2700949EE6 /* External */,
 				BF2F717716842CBD006CD5E1 /* TestCases */,
 				BF3478AE16842AF50090FBCE /* Frameworks */,
 				BF3478AC16842AF50090FBCE /* Products */,
@@ -231,6 +232,13 @@
 				BF3478C416842AF50090FBCE /* MainMenu.xib */,
 			);
 			name = en.lproj;
+			sourceTree = "<group>";
+		};
+		BF8B705916E4AD2700949EE6 /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 		BFE0498C16937EEF00EA7F6E /* Scripts */ = {
